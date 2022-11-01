@@ -33,24 +33,3 @@ function RepliedContainer() {
     );
 }
 export default RepliedContainer;
-
-/*
-
-edited ?
-                        <div className="reply-container">
-                            <span className='reply-icon'>
-                                <i class="fa-solid fa-pen"></i>
-                            </span>
-                            <div className="reply-info">
-                                <div className="repmessage">
-                                    <h4 className='edit-message-header'>Edit Message</h4>
-                                    <h4 className='reply-message'>{selectedMessage}</h4>
-                                </div>
-                            </div>
-
-                            <span className='close-reply-icon' onClick={() => { setEdited(false); setMessage(null) }}>
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>
-                        </div>
-                        : null
-*/

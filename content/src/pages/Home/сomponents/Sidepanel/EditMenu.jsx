@@ -6,8 +6,8 @@ import add_photo from '../../../../assets/img/add-photo.svg'
 import './EditMenu.scss'
 import instance from '../../../../api/axios'
 import Api from '../../../../api/api'
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { getMeData } from '../../../../redux/asyncActions/meData';
 
 
 const api = new Api()
@@ -18,6 +18,7 @@ const EditMenu = ({ goToProfile }) => {
     const [img, setImg] = useState()
     const [avatar, setAvatar] = useState()
 
+    const dispatch = useDispatch()
     //const [clicked, setClicked] = useState()
 
     useEffect(() => {
@@ -28,13 +29,13 @@ const EditMenu = ({ goToProfile }) => {
                     data.append('avatar', img)
                     await instance.post("/upload", data)
                         .then(res => {
-                            console.log(res.data)
                             setAvatar(res.data)
                         })
+                    dispatch(getMeData())
                 }
 
             } catch (e) {
-                console.log('hi')
+                console.log(e)
             }
         }()
     }, [img])
@@ -50,26 +51,14 @@ const EditMenu = ({ goToProfile }) => {
         )
     }, [])
 
-
-    /* const goToProfile = () => {
-         setClicked('go-profile')
-     }*/
-
-    /*if (clicked == 'go-profile') {
-        return (
-            <ProfileMenu />
-        )
-    }*/
-    //server\images\1662488148916.png
     const changeUserName = async (e) => {
         e.preventDefault()
         const res = await instance.post('/edituser', { username: userName, userbio: userBio })
-        console.log(res)
         document.querySelector('.submit-edit-changes').value = 'Nice!'
-        setTimeout(() => {document.querySelector('.submit-edit-changes').style.display = 'none'}, 500)
+        setTimeout(() => { document.querySelector('.submit-edit-changes').style.display = 'none' }, 500)
     }
     const handleName = (e) => {
-        if (e.target.value.length >=1 || e.target.value.length >= 40 ){
+        if (e.target.value.length >= 1 || e.target.value.length >= 40) {
             setUserName(e.target.value)
             document.querySelector('.submit-edit-changes').style.display = 'inline-block'
         }
@@ -78,7 +67,6 @@ const EditMenu = ({ goToProfile }) => {
         setUserBio(e.target.value)
         document.querySelector('.submit-edit-changes').style.display = 'inline-block'
     }
-    // onChange add submit changes button
 
     return (
         <div className='dialog-container'>
@@ -100,8 +88,8 @@ const EditMenu = ({ goToProfile }) => {
                         <img src={add_photo} alt="Add photo" id="add-photo" className="edit-avatar-icon" />
                     </div>
                 </div>
-                <form className="edit-info" onSubmit={ e => changeUserName(e)}>
-                    <input className="edit-nickname" type="text" maxLength={45}  onChange={e => handleName(e)} value={userName || ''} />
+                <form className="edit-info" onSubmit={e => changeUserName(e)}>
+                    <input className="edit-nickname" type="text" maxLength={45} onChange={e => handleName(e)} value={userName || ''} />
                     <input className="edit-nickname" placeholder='Bio' maxLength={45} onChange={e => handleBio(e)} value={userBio || ''} />
                     <p className="bio-description">Any details such as age, occupation or city. Example: 23 y.o. designer from San Francisco</p>
                     <input className='submit-edit-changes' type="submit" value="Submit" style={{ display: 'none' }} />

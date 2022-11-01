@@ -4,7 +4,6 @@ import Home from './pages/Home/Home'
 import RegisterForm from './pages/RegisterForm/RegisterForm'
 import LoginForm from './pages/LoginForm/LoginForm'
 import { useNavigate, Link, Navigate, Route, Routes, } from "react-router-dom"
-import './App.scss'
 
 import Api from './api/api'
 export const api = new Api()

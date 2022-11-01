@@ -26,7 +26,6 @@ const SearchFriend = ({goToDialogs}) => {
 
     const getAllUsers = async function () {
         const response = await instance.get('/users')
-        //console.log(response.data)
         setUser(response.data.map(i => {
             return [i.avatar, i.phone]
         }
@@ -43,13 +42,10 @@ const SearchFriend = ({goToDialogs}) => {
         const userdata = user.map(i => {
             return [i[0], i[1]]
         })
-        //console.log(userdata)
         const filtered = userdata.filter(element => {
 
             return element[1].includes(searchWord)
         })
-        //console.log(filtered)
-        console.log(filtered)
         setFilteredData(filtered)
     }
 
@@ -58,7 +54,6 @@ const SearchFriend = ({goToDialogs}) => {
     }
 
     const crDialog = async (user) => {
-        console.log(user)
         const response = await instance.post('/dialogs', {partner_phone : user})
         socket.emit('DIALOG:NEW_DIALOG', response.data)
     }

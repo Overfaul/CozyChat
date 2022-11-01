@@ -28,7 +28,6 @@ function Profile(props) {
   const [authorChatData, setAuthorChatData] = useState([])
 
   const [dialogData, setDialogData] = useState('')
-  const [isOnline, setIsOnline] = useState('Offline')
 
   const dispatch = useDispatch()
 
@@ -36,7 +35,7 @@ function Profile(props) {
   // check if user authenticated if not then he has no access to url
   useEffect(() => {
     dispatch(getMeData())
-  }, [])
+  }, [dialogData])
 
 
   useEffect(() => {
@@ -70,11 +69,6 @@ function Profile(props) {
 
   const getAuthorChatData = (el) => { setAuthorChatData(el) }
 
-  /*
-  const getMeData = (el) => {
-    setMeData(el)
-  }*/
-
   const getDialogData = (el) => { setDialogData(el) }
 
   /*useEffect(() => {
@@ -97,7 +91,6 @@ function Profile(props) {
       {clicked === 'goto-crdialog' && <SearchFriend goToDialogs={goToDialogs} />}
       {clicked === 'goto-editmenu' && <EditMenu goToProfile={goToProfile} />}
       {authorChatData?.fullname ? <ChatMain
-        isOnline={isOnline}
         authorData={authorChatData}
         userData={userChatData}
         dialogData={dialogData}

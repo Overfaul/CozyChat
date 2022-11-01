@@ -35,12 +35,9 @@ let chatusers = []
 io.on('connection', (socket) => {
 
     socket.on('connected', (userId) => {
-        //users[socket.id] = userId;
 
         const socketId = socket.id
-        //console.log(userId)
         !chatusers.some(user => user.userId === userId) && chatusers.push({ userId, socketId })
-        //console.log(chatusers)
         io.emit('connected', chatusers)
     })
 

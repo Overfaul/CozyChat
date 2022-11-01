@@ -21,7 +21,7 @@ class uploadController {
         const userid = req.user.id
 
         const image = req?.file?.path
-        //const userData = await Message.create({attachment : image, text: ''});
+
             
         return res.json(image)
     }

@@ -281,11 +281,7 @@ const ChatMain = ({ userData, dialogData }) => {
                 const senderId = currentuser.id
                 const recieverId = userData.id
                 socket.emit('DIALOG:NEW_MESSAGE', { senderId, recieverId, mesdata })
-                //setNewMessage({mesdata, senderId})
                 setUsersMessages(prev => [...prev, mesdata[0]])
-                //setNewMessage(mesdata)
-                //setSenderId(senderId)
-                //console.log(mesdata)
                 socket.emit('DIALOG:LAST_MESSAGE', mesdata)
 
                 setMessage(null)
@@ -304,7 +300,6 @@ const ChatMain = ({ userData, dialogData }) => {
     }, [newMessage, dialogData])
 
     socket.on('DIALOG:GET_MESSAGE', ({ senderId, mesdata }) => {
-        //console.log(mesdata)
         setSenderId(senderId)
         setNewMessage(mesdata)
     })

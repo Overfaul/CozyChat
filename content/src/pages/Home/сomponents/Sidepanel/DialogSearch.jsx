@@ -36,7 +36,6 @@ const DialogSearch = ({ goToProfile, goToCreateDialog, getUserChatData, getAutho
 
     useEffect(() => {
         if (newDialog !== null) {
-            console.log(newDialog)
             setFilteredData(prev => [...prev, newDialog])
         }
     }, [newDialog])
@@ -78,7 +77,6 @@ const DialogSearch = ({ goToProfile, goToCreateDialog, getUserChatData, getAutho
             setFilteredData(data)
         }
     }
-    //console.log(userData)
 
 
     //  Leaving a dialog
@@ -168,12 +166,11 @@ const DialogSearch = ({ goToProfile, goToCreateDialog, getUserChatData, getAutho
                 {
                     filteredData
                         .map((el, index) => {
-                            console.log(el)
                             return (
                                 <div className="whole-dialog" key={index}>
                                     <ClickMenu anchorPoint={anchorPoint} show={show} dialog_id={dialogId} leaveDialogHandler={leaveDialogHandler} />
                                     <div className="dialog" onContextMenu={(e) => { handleContextMenu(e); setDialogId(el.user.user_dialog.dialogId) }}
-                                        onClick={() => { console.log(el.id); getUserChatData(el.user); getAuthorChatData(el.author); setDialogId(el.id); getDialogData(el) }}
+                                        onClick={() => { getUserChatData(el.user); getAuthorChatData(el.author); setDialogId(el.id); getDialogData(el) }}
                                     >
                                         <img className='dialog-avatar' src={`http://localhost:3002/static/${el?.user?.avatar}`} alt="avatar" width="100px" />
                                         <div className="userinfo" >

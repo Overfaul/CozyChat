@@ -14,11 +14,13 @@ import Api from '../../../../api/api'
 import EditMenu from './EditMenu'
 import instance from '../../../../api/axios';
 import { useDispatch, useSelector } from 'react-redux';
+import { getMeData } from '../../../../redux/asyncActions/meData';
 const api = new Api()
 
 const ProfileMenu = ({goToDialogs, goToEditMenu}) => {
     const navigate = useNavigate()
 
+    const dispatch = useDispatch()
     const [data, setData] = useState()
     const [loaded, setLoaded] = useState(false)
 
