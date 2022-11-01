@@ -1,0 +1,35 @@
+.context-menu {
+    font-size: 14px;
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #1d1d1d;
+    border-radius: 4px;
+    padding: 4px;
+    width: 150px;
+    margin: 0;
+    
+    position: fixed;
+    list-style: none;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.267);
+    transition: opacity 0.5s linear;
+    .leave-dialog-button{
+        display:flex;
+        align-items: center;
+        .leave-dialog-icon{
+            margin: 5px;
+            height: 20px;
+        }
+        .leave-dialog-text{
+            text-align: center;
+            margin-left: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+        }
+        &:hover{
+            background-color: rgba(18, 19, 19, 0.712);
+            border-radius: 2px;
+        }
+    }
+  }

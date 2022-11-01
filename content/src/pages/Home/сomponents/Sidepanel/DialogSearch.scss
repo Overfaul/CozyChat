@@ -1,0 +1,171 @@
+.dialog-container {
+    border-right: 1px solid rgba(255, 255, 255, 0.068);
+    //background-color: #1d1d1d;
+    background-color: #121212;
+    box-shadow: 0px 56px 8px rgb(0, 0, 0);
+    position: relative;
+
+    .dialog-list-search {
+        /*display:flex;
+        justify-content: center;
+        align-items: center;
+        gap:30px;
+        padding:20px;
+        height: 30px;*/
+        height: 40px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        border-radius: 40px;
+        width: 95%;
+        margin: 10px;
+
+        .create-dialog-button {
+            width: 55px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .create-dialog-icon {
+                user-select: none;
+                pointer-events: none;
+                height: 23px;
+            }
+        }
+
+        .go-to-menu-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+            height: 42px;
+
+            .go-to-menu-icon {
+                user-select: none;
+                pointer-events: none;
+                height: 16px;
+            }
+        }
+
+        .dialog-list-searchpanel {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 42px;
+            width: 100%;
+            //background-color: #353535;
+            background-color: #1d1d1d;
+            border-radius: 40px;
+            margin: 15px;
+
+            .search-input {
+                //background-color: #353535;
+                background-color: #1d1d1d;
+                height: 25px;
+                border-radius: 40px;
+                width: 100%;
+                outline: none;
+                border: none;
+                color: white;
+                font-weight: 500;
+                font-size: 15px;
+
+            }
+
+            &:focus-within {
+                outline-style: solid;
+                outline-color: rgba(21, 158, 236, 0.808);
+                outline-width: 2px;
+
+                #uncolored-icon {
+                    display: none;
+                }
+
+                #colored-icon {
+                    display: block;
+                }
+            }
+
+            .dialog-search-icon {
+                user-select: none;
+                pointer-events: none;
+                margin: 10px;
+                max-height: 55%;
+            }
+
+            #colored-icon {
+                display: none;
+            }
+
+        }
+    }
+
+    .dialogs {
+        overflow: auto;
+        display:flex;
+        flex-direction: column;
+        height: 93.8vh;
+        &::-webkit-scrollbar {
+            height: 100%;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.027);
+            border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #77777728;
+            border-radius: 20px;
+        }
+        .dialog {
+            display: flex;
+            width: 92%;
+            margin: 15px;
+            padding: 5px;
+            cursor: pointer;
+
+            .dialog-avatar {
+                user-select: none;
+                pointer-events: none;
+                width: 65px;
+                height: 65px;
+                margin: 5px;
+                border-radius: 50%;
+            }
+
+            .userinfo {
+                user-select: none;
+                pointer-events: none;
+                margin: 12px;
+                line-height: 1.4;
+                word-break: break-all;
+
+                .friendfullname {
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 500;
+                    color: rgb(223, 223, 223);
+                    font-size: 16px;
+                }
+                .lastmessage{
+                    color: rgb(170, 170, 170);
+                    font-weight: 500;
+                    margin-top: 8px;
+                    font-size: 16px;
+                }
+            }
+
+            &:hover {
+                background-color: rgba(2, 2, 2, 0.404);
+                border-radius: 15px;
+            }
+        }
+    }
+}
+
+html,
+body {
+    margin: 0;
+}

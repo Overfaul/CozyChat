@@ -1,0 +1,49 @@
+.context-menu-message {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    padding: 5px;
+    width: 150px;
+
+    position: fixed;
+    list-style: none;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.116);
+    transition: opacity 0.5s linear;
+
+    .contextmenu-button {
+        display: flex;
+        margin: 3px;
+        align-items: center;
+
+        .contextmenu-icon {
+            margin: 5px;
+            height: 20px;
+        }
+
+        .contextmenu-text {
+            text-align: center;
+            margin-left: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.212);
+            border-radius: 5px;
+        }
+    }
+}
+
+.context-menu-message.left{
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.context-menu-message.top{
+    top: 100%;
+    transform: translateY(-100%);
+}

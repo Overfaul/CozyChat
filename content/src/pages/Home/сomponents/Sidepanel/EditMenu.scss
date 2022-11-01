@@ -1,0 +1,142 @@
+.edit-profile-panel {
+    display: flex;
+    flex-direction: column;
+
+    .edit-avatar {
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        padding: 10px;
+        width: 120px;
+        position: relative;
+    }
+
+    .edit-nickname {
+        height: 35px;
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid rgb(85, 85, 85);
+        border-radius: 15px;
+        background-color: #1d1d1d;
+        outline: none;
+        color: white;
+        font-size: 15px;
+
+        &:hover {
+            border: 2px solid rgb(92, 82, 185);
+        }
+    }
+}
+
+.bio-description {
+    width: 76%;
+    margin: 10px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.500);
+    font-size: 14px;
+    cursor: default;
+}
+
+.edit-info {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.submit-edit-changes {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid rgb(92, 82, 185);
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: rgb(92, 82, 185);
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 auto;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 80%;
+    will-change: transform;
+
+    &:hover {
+        color: rgb(204, 204, 204);
+        background-color: #1A1A1A;
+        
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(0);
+    }
+
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+
+    .editprofile-text {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 15px;
+        cursor: default;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.edit-avatar-image {
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //pointer-events: none;
+}
+
+
+.edit-avatar-input {
+    opacity: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.avatar-background {
+    background-color: rgba(0, 0, 0, 0.568);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+
+
+
+
+.button-28:disabled {
+    pointer-events: none;
+}

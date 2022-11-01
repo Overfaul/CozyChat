@@ -1,0 +1,23 @@
+/node_modules
+/config/.env
+
+/content/node_modules
+/content/.pnp
+/content/.pnp.js
+
+# testing
+/content/coverage
+
+# production
+/content/build
+
+# misc
+/content/.DS_Store
+/content/.env.local
+/content/.env.development.local
+/content/.env.test.local
+/content/.env.production.local
+
+/content/npm-debug.log*
+/content/yarn-debug.log*
+/content/yarn-error.log*

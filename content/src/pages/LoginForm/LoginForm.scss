@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+$font: 'Teko', sans-serif;
+
+
+
+.l-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    .l-input{
+        margin: 5px;
+        border: 2.5px solid rgb(0, 0, 0);
+        border-radius: 5px;
+        width: 300px;
+        height: 25px;
+        font-size: 15px;
+        padding: 5px;
+    }
+    .l-button{
+        font-family: $font;
+        background-color: rgb(0, 0, 0);
+        font-size: 18px;
+        color: white;
+        height: 40px;
+        width: 315px;
+        margin: 2px;
+        border-radius: 5px;
+        transition: transform 100ms;
+
+        &:hover{
+            transform: translateY(-2px);
+        }
+    }  
+}
+.l-error-msg{
+    font-family: $font;
+    color: red;
+    font-size: 15px;
+}

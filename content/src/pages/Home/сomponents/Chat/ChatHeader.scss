@@ -1,0 +1,109 @@
+// #1D1D1D
+.status{
+    height: 10px;
+    width: 10px;
+    background-color: rgb(39, 202, 48);
+    border-radius: 50%;
+    border: 2px solid #141515;
+    position: absolute;
+    left: 30px;
+    top: 27px;
+    display: inline-block;
+}
+.user-avatar{
+    position: relative;
+    margin-right: 8px;
+}
+.chat-header-container {
+    //background-color: #1d1d1d;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    box-shadow: 5px 1px 8px rgb(0, 0, 0);
+
+    .content {
+        display: flex;
+        padding: 20px;
+        width: 97%;
+        justify-content: space-between;
+        align-items: center;
+
+        .friend-status-container {
+            display: flex;
+            align-items: center;
+            cursor: default;
+
+            .dialog-friend-avatar {
+                user-select: none;
+                pointer-events: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+            }
+
+            .dialog-friend-statusinfo {
+                line-height: 0.7;
+                .dialog-friend-fullname {
+                    user-select: none;
+                    pointer-events: none;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 500;
+                    color: white;
+                    letter-spacing: 0.6px;
+                    font-size: 16px;
+                    margin: 10px;
+                }
+                .dialog-friend-bio{
+                    user-select: none;
+                    pointer-events: none;
+                    color: rgba(255, 255, 255, 0.527);
+                    font-size: 13px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    margin: 10px;
+                }
+            }
+        }
+    }
+
+    .search-settings-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 15px;
+
+        .search-input-button {
+            display: none;
+            height: 35px;
+            width: 35px;
+
+            .search-input-icon {
+                height: 20px;
+            }
+        }
+
+        .profile-settings-button {
+            height: 35px;
+            width: 35px;
+
+            .profile-settings-icon {
+                height: 8px;
+                width: 25px;
+            }
+        }
+    }
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+.profile-settings-button:hover,
+.search-input-button:hover,
+.create-dialog-button:hover,
+.go-to-menu-button:hover,
+.go-back-button:hover {
+    background-color: rgba(255, 255, 255, 0.041);
+    border-radius: 40px;
+}

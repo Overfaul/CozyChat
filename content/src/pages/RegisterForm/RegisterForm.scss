@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+$font: 'Teko', sans-serif;
+
+
+
+.r-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    .r-input{
+        color: rgb(226, 224, 224);
+        margin: 5px;
+        border: 2px solid rgb(85, 85, 85);
+        background-color: #1d1d1d;;
+        border-radius: 15px;
+        width: 18%;
+        height: 30px;
+        font-size: 15px;
+        padding: 10px;
+        &:focus{
+            outline: none;
+            border: 2px solid rgb(92, 82, 185);
+            box-shadow: rgba(153, 152, 152, 0.192) 0px 1px 10px 4px;
+        }
+    }
+    .r-button {
+        appearance: none;
+        background-color: transparent;
+        border: 2px solid rgb(92, 82, 185);
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: rgb(92, 82, 185);
+        cursor: pointer;
+        font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0 auto;
+        min-height: 60px;
+        min-width: 0;
+        outline: none;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 15%;
+        margin-top: 15px;
+        will-change: transform;
+    
+        &:hover {
+            color: rgb(204, 204, 204);
+            background-color: #1A1A1A;
+            
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+    
+        &:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+    
+    }
+}
+
+.r-error-msg{
+    font-family: $font;
+    color: rgb(221, 73, 73);
+    font-size: 15px;
+}
+.r-to-signin{
+    margin: 10px;
+    font-size: 15px;
+    color: rgb(226, 224, 224);
+    .link-to-signin{
+        text-decoration: none;
+        color:#0cc71fcc;
+    }
+}
+

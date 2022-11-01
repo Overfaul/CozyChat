@@ -1,0 +1,126 @@
+/*@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}*/
+
+
+.contacts-panel {
+    margin: 20px;
+    //border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-contact{
+    display: flex;
+}
+.friend-profile {
+    display: flex;
+    justify-content:space-between;
+    padding: 15px;
+    cursor: pointer;
+    //animation: 0.2s ease-out 0s 1 slideInFromLeft;
+
+    .friend-avatar {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+    }
+    
+    .friend-info{
+        margin: 7px;
+
+        .friend-phone{
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .friend-status{
+            color: rgba(255, 255, 255, 0.507);
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+    &:hover{
+        background-color: rgba(2, 2, 2, 0.404);
+        border-radius: 15px;
+    }
+}
+
+.users-list-search {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 10px;
+    animation: 0.2s ease-out 0s 1 slideInFromLeft;
+
+    .go-back-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 40px;
+    }
+
+    .go-back-icon {
+        height: 28px;
+    }
+
+    .users-list-searchpanel {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 42px;
+        width: 100%;
+        //background-color: #353535;
+        background-color: #1d1d1d;
+        border-radius: 40px;
+        margin: 15px;
+
+        .search-users-input {
+            //background-color: #353535;
+            background-color: #1d1d1d;
+            height: 25px;
+            border-radius: 40px;
+            width: 100%;
+            outline: none;
+            border: none;
+            color: white;
+            font-weight: 500;
+            font-size: 15px;
+
+        }
+
+        &:focus-within {
+            outline-style: solid;
+            outline-color: rgba(21, 158, 236, 0.808);
+            outline-width: 2px;
+
+            #uncolored-icon {
+                display: none;
+            }
+
+            #colored-icon {
+                display: block;
+            }
+        }
+
+        .users-search-icon {
+            margin: 10px;
+            max-height: 55%;
+        }
+
+        #colored-icon {
+            display: none;
+        }
+
+    }
+}
