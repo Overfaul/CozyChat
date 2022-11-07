@@ -53,15 +53,15 @@ const EditMenu = ({ goToProfile }) => {
 
     const changeUserName = async (e) => {
         e.preventDefault()
-        const res = await instance.post('/edituser', { username: userName, userbio: userBio })
-        document.querySelector('.submit-edit-changes').value = 'Nice!'
-        setTimeout(() => { document.querySelector('.submit-edit-changes').style.display = 'none' }, 500)
+        if (userName.length > 0){
+            const res = await instance.post('/edituser', { username: userName, userbio: userBio })
+            document.querySelector('.submit-edit-changes').value = 'Nice!'
+            setTimeout(() => { document.querySelector('.submit-edit-changes').style.display = 'none' }, 500)
+        }
     }
     const handleName = (e) => {
-        if (e.target.value.length >= 1 || e.target.value.length >= 40) {
-            setUserName(e.target.value)
-            document.querySelector('.submit-edit-changes').style.display = 'inline-block'
-        }
+        setUserName(e.target.value)
+        document.querySelector('.submit-edit-changes').style.display = 'inline-block'
     }
     const handleBio = (e) => {
         setUserBio(e.target.value)
