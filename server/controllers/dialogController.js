@@ -8,13 +8,19 @@ class DialogController {
         try {
             const { partner_phone } = req.body
             const author_id = req.user.id
-            console.log(author_id)
-            console.log(partner_phone)
 
             const authordata = await User.findOne({ where: author_id })
             const partner = await User.findOne({ where: { phone: partner_phone } })
 
-            const checkdialog = await Dialog.findOne({ where: { authorId: authordata.id, partnerId: partner.id } })
+            const checkdialog = await Dialog.findOne({
+                where: {
+                    [Op.or]: [
+                        { authorId: authordata.id, partnerId: partner.id },
+                        { authorId: partner.id, partnerId: authordata.id }
+                    ]
+                }
+            })
+
 
             if (checkdialog) {
                 return next(ErrorHandler.badrequest("Такой диалог уже существует"))
@@ -23,7 +29,7 @@ class DialogController {
             const userData = await Dialog.create({ authorId: authordata.id, partnerId: partner.id })
             await userData.addUser(authordata)
             await userData.addUser(partner)
-            
+
             const dialog = await Dialog.findOne({
                 include: { model: User, as: 'users' },
                 where: {

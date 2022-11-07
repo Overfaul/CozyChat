@@ -31,13 +31,11 @@ const DialogSearch = ({ goToProfile, goToCreateDialog, getUserChatData, getAutho
     const currentuser = useSelector(state => state.meinfo)
 
     useEffect(() => {
-        getDialogs()
-    }, [])
-
-    useEffect(() => {
         if (newDialog !== null) {
             setFilteredData(prev => [...prev, newDialog])
+            getDialogs()
         }
+        getDialogs()
     }, [newDialog])
 
     socket.on('DIALOG:LAST_MESSAGE', (message_data) => {
@@ -67,6 +65,7 @@ const DialogSearch = ({ goToProfile, goToCreateDialog, getUserChatData, getAutho
             return i
         })
             // sorting dialogs by their date
+            .filter((el, i, arr) => el.user && arr.indexOf(el) === i)
             .sort((a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime())
             .reverse()
 

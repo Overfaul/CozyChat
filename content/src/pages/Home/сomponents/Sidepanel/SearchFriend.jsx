@@ -49,10 +49,6 @@ const SearchFriend = ({goToDialogs}) => {
         setFilteredData(filtered)
     }
 
-    const goBackHandler = () => {
-        dispatch({type : "GO_DIALOGS", payload: 'go-dialog'})
-    }
-
     const crDialog = async (user) => {
         const response = await instance.post('/dialogs', {partner_phone : user})
         socket.emit('DIALOG:NEW_DIALOG', response.data)
