@@ -32,12 +32,12 @@ function Profile(props) {
   const dispatch = useDispatch()
 
   const me = useSelector(state => state.meinfo)
-  // check if user authenticated if not then he has no access to url
+
   useEffect(() => {
     dispatch(getMeData())
-  }, [dialogData])
+  }, [])   // dialogData
 
-
+  // check if user authenticated if not then he has no access to url
   useEffect(() => {
     const checkAuth = async () => {
       if (localStorage.getItem('token')) {
@@ -61,6 +61,7 @@ function Profile(props) {
   const goToDialogs = () => { setClicked('dialog-search') }
 
   const goToEditMenu = () => { setClicked('goto-editmenu') }
+
 
   /*                        */
 

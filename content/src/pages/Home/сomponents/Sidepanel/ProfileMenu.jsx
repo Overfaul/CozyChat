@@ -19,8 +19,6 @@ const api = new Api()
 
 const ProfileMenu = ({goToDialogs, goToEditMenu}) => {
     const navigate = useNavigate()
-
-    const dispatch = useDispatch()
     const [data, setData] = useState()
     const [loaded, setLoaded] = useState(false)
 
