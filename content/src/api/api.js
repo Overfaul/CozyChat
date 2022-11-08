@@ -73,16 +73,5 @@ export default class Api {
         }
     }
 
-    async checkStatus(ustatus) {
-        try {
-            if(ustatus){
-                const response = await instance.post('/userstatus', {userstatus : 'Online'})
-                return response.data
-            }
-        } catch (e){
-            console.log(e)
-        }
-    }
-
 }
 

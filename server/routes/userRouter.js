@@ -17,7 +17,6 @@ router.get('/refresh', userController.refresh)
 router.get('/me', authmiddleware, userController.getMe)
 router.get('/users', authmiddleware, userController.getAllUsers)
 
-router.post('/userstatus', authmiddleware, userController.userStatus)
 router.post('/edituser', authmiddleware, userController.changeUserData)
 // Dialogs
 router.post('/dialogs', authmiddleware, dialogController.createDialog)

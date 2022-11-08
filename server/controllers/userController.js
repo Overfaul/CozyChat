@@ -77,21 +77,6 @@ class UserController {
         }
     }
 
-    async userStatus(req, res, next) {
-        try {
-            const userid = req.user.id
-            const {userstatus} = req.body
-            
-            const userData = await User.update(
-                { status: userstatus },
-                { where: { id: userid } }
-            );
-            return res.json(userData)
-        } catch (e) {
-            next(e)
-        }
-    }
-
     async changeUserData(req, res, next) {
         try {
             const userid = req.user.id

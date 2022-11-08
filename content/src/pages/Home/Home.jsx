@@ -72,15 +72,6 @@ function Profile(props) {
 
   const getDialogData = (el) => { setDialogData(el) }
 
-  /*useEffect(() => {
-    socket.emit('connected', meData.id)
-    socket.on('connected', (mes) => {
-        const usersIds = mes.map(a => a.userId)
-        setUsersStatus(Object.values(usersIds))
-        setUserStatus(mes)
-    })
-}, [])*/
-
   socket.emit('connected', me.id)
   // if users socket id = authordata id then online
   return (
