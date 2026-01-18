@@ -1,10 +1,55 @@
 # CozyChat
-CozyChat is a copy of the popular web application web.telegram.org. Written in React, Node.js + Socket.io
 
-Some images of the site's appearance
+CozyChat is a real-time web chat application inspired by modern messaging platforms.  
+The project demonstrates real-time communication using WebSockets, a clean client–server architecture, and a responsive user interface.
+
+This project was revisited and updated to reflect modern development practices and tooling.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React
+- Socket.io-client
+- CSS / Flexbox
+
+### Backend
+- Node.js
+- Express
+- Socket.io
+
+### Database
+- PostgreSQL
+
+---
+
+## ✨ Features
+
+- Real-time messaging via WebSockets
+- Client–server communication using Socket.io
+- Responsive chat UI inspired by modern messengers
+- Event-based architecture
+- Modular project structure
+
+---
+
+## 📸 Screenshots
+
+Examples of the user interface:  
 https://imgur.com/a/Es9u3xV
 
-## Run Locally (server)
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js >= 16
+- npm
+
+---
+
+## 🔧 Run Locally (server)
 
 Clone the project
 
@@ -30,7 +75,7 @@ Start the server (nodemon included)
   npm start
 ```
 
-## Run Locally (client)
+## 💻 Run Locally (client)
 
 Go to the client project directory
 
